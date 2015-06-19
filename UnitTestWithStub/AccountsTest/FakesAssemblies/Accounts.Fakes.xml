@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Accounts.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Accounts.Fakes.ShimCheckingAccount">
+            <summary>Shim type of Accounts.CheckingAccount</summary>
+        </member>
+        <member name="M:Accounts.Fakes.ShimCheckingAccount.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Accounts.Fakes.ShimCheckingAccount.#ctor(Accounts.CheckingAccount)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Accounts.Fakes.ShimCheckingAccount.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Accounts.Fakes.ShimCheckingAccount.AllInstances.BalanceGet">
+            <summary>Sets the shim of CheckingAccount.get_Balance()</summary>
+        </member>
+        <member name="P:Accounts.Fakes.ShimCheckingAccount.AllInstances.WithdrawDouble">
+            <summary>Sets the shim of CheckingAccount.Withdraw(Double amount)</summary>
+        </member>
+        <member name="P:Accounts.Fakes.ShimCheckingAccount.BalanceGet">
+            <summary>Sets the shim of CheckingAccount.get_Balance()</summary>
+        </member>
+        <member name="M:Accounts.Fakes.ShimCheckingAccount.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Accounts.Fakes.ShimCheckingAccount.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Accounts.Fakes.ShimCheckingAccount.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Accounts.Fakes.ShimCheckingAccount.ConstructorStringDouble">
+            <summary>Sets the shim of CheckingAccount.CheckingAccount(String name, Double balance)</summary>
+        </member>
+        <member name="P:Accounts.Fakes.ShimCheckingAccount.WithdrawDouble">
+            <summary>Sets the shim of CheckingAccount.Withdraw(Double amount)</summary>
+        </member>
+        <member name="T:Accounts.Fakes.StubCheckingAccount">
+            <summary>Stub type of Accounts.CheckingAccount</summary>
+        </member>
+        <member name="M:Accounts.Fakes.StubCheckingAccount.#ctor(System.String,System.Double)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Accounts.Fakes.StubCheckingAccount.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:Accounts.Fakes.StubCheckingAccount.InitializeStub">
+            <summary>Initializes a new instance of type StubCheckingAccount</summary>
+        </member>
+        <member name="P:Accounts.Fakes.StubCheckingAccount.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Accounts.Fakes.StubCheckingAccount.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Accounts.Fakes.StubIAccount">
+            <summary>Stub type of Accounts.IAccount</summary>
+        </member>
+        <member name="M:Accounts.Fakes.StubIAccount.#ctor">
+            <summary>Initializes a new instance of type StubIAccount</summary>
+        </member>
+        <member name="M:Accounts.Fakes.StubIAccount.Accounts#IAccount#Withdraw(System.Double)">
+            <summary>Sets the stub of IAccount.Withdraw(Double amount)</summary>
+        </member>
+        <member name="F:Accounts.Fakes.StubIAccount.WithdrawDouble">
+            <summary>Sets the stub of IAccount.Withdraw(Double amount)</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankDb.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:BankDb.Fakes.StubIBankDb">
+            <summary>Stub type of BankDb.IBankDb</summary>
+        </member>
+        <member name="M:BankDb.Fakes.StubIBankDb.#ctor">
+            <summary>Initializes a new instance of type StubIBankDb</summary>
+        </member>
+        <member name="M:BankDb.Fakes.StubIBankDb.BankDb#IBankDb#Withdraw(System.Int32,System.Double)">
+            <summary>Sets the stub of IBankDb.Withdraw(Int32 id, Double amount)</summary>
+        </member>
+        <member name="F:BankDb.Fakes.StubIBankDb.WithdrawInt32Double">
+            <summary>Sets the stub of IBankDb.Withdraw(Int32 id, Double amount)</summary>
+        </member>
+    </members>
+</doc>
