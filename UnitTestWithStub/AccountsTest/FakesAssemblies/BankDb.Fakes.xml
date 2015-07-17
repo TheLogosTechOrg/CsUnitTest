@@ -10,7 +10,7 @@
         <member name="M:BankDb.Fakes.StubIBankDb.#ctor">
             <summary>Initializes a new instance of type StubIBankDb</summary>
         </member>
-        <member name="M:BankDb.Fakes.StubIBankDb.BankDb#IBankDb#Withdraw(System.Int32,System.Double)">
+        <member name="M:BankDb.Fakes.StubIBankDb.bd::BankDb#IBankDb#Withdraw(System.Int32,System.Double)">
             <summary>Sets the stub of IBankDb.Withdraw(Int32 id, Double amount)</summary>
         </member>
         <member name="F:BankDb.Fakes.StubIBankDb.WithdrawInt32Double">

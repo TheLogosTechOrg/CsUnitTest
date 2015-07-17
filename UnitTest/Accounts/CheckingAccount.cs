@@ -8,12 +8,12 @@ namespace Accounts
 {
     public class CheckingAccount
     {
-        private string name;
-        double m_balance = 0;
+        private string m_name;
+        private double m_balance = 0;
 
         public CheckingAccount(string name, double balance)
         {
-            this.name = name;
+            this.m_name = name;
             this.m_balance = balance;
         }
 

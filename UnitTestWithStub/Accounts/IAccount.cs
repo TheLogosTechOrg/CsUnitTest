@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Accounts
 {
-    public interface IAccount
+    interface IAccount
     {
         void Withdraw(double amount);
     }

@@ -9,25 +9,7 @@ namespace AccountsTest
     public class CheckingAccountTest
     {
         [TestMethod]
-        public void Withdraw_ValidAmount_ChangesBalance()
-        {
-            // arrange
-            double currentBalance = 10.0;
-            double withdrawal = 1.0;
-            double expected = 9.0;
-
-            var account = new CheckingAccount("JohnDoe", currentBalance);
-
-            // act
-            account.Withdraw(withdrawal);
-            double actual = account.Balance;
-
-            // assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void Withdraw_ValidAmount_ChangesBalance_Stub() // using stub
+        public void Withdraw_ValidAmount_ChangesBalance_WithStub() // using stub
         {
             // arrange
             double currentBalance = 10.0;
@@ -40,10 +22,28 @@ namespace AccountsTest
             fakeBankDb.WithdrawInt32Double = (id, amount) => 9.0;
             // same as: fakeBankDb.WithdrawInt32Double = (id, amount) => { return 9.0; };
 
-            CheckingAccount account = new CheckingAccount("JohnDoe", currentBalance, fakeBankDb);
+            var account = new CheckingAccount("JohnDoe", currentBalance, fakeBankDb);
 
             // act
             account.WithdrawFromDb(withdrawal);
+            double actual = account.Balance;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Withdraw_ValidAmount_ChangesBalance()
+        {
+            // arrange
+            double currentBalance = 10.0;
+            double withdrawal = 1.0;
+            double expected = 9.0;
+
+            var account = new CheckingAccount("JohnDoe", currentBalance);
+
+            // act
+            account.Withdraw(withdrawal);
             double actual = account.Balance;
 
             // assert

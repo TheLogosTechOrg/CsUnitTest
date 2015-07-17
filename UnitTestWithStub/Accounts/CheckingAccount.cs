@@ -7,23 +7,22 @@ using System.Threading.Tasks;
 
 namespace Accounts
 {
-    public class CheckingAccount
+    public class CheckingAccount : IAccount
     {
-        private string name;
-        double m_balance = 0;
-        IBankDb m_bankDb = null;
-        AccountInfo m_accountInfo = null;
+        private double m_balance = 0;
+        private IBankDb m_bankDb = null;
+        private AccountInfo m_accountInfo = null;
 
         public CheckingAccount(string name, double balance)
         {
-            this.name = name;
+            this.m_accountInfo = new AccountInfo() { Name = name };
             this.m_balance = balance;
         }
 
         public CheckingAccount(string name, double balance, IBankDb bankDb) : this(name, balance)
         {
             this.m_bankDb = bankDb;
-            this.m_accountInfo = new AccountInfo() { ID = 123 };
+            this.m_accountInfo.ID = 123;
         }
 
         public double Balance

@@ -9,5 +9,6 @@ namespace Accounts
     class AccountInfo
     {
         public int ID;
+        public string Name;
     }
 }
