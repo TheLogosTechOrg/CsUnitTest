@@ -54,5 +54,20 @@ namespace Accounts
                 throw new ArgumentException(amount.ToString(), "Withdrawal exceeds balance!");
             }
         }
+
+        public bool WithdrawFromDbUsingOut(double amount)
+        {
+            if (m_balance >= amount)
+            {
+                //m_balance -= amount;
+                if(m_bankDb.WithdrawWithOut(m_accountInfo.ID, amount, out m_balance))
+                    return true;
+            }
+            else
+            {
+                throw new ArgumentException(amount.ToString(), "Withdrawal exceeds balance!");
+            }
+            return false;
+        }
     }
 }

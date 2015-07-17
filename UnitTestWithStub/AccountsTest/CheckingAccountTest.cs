@@ -33,6 +33,31 @@ namespace AccountsTest
         }
 
         [TestMethod]
+        public void Withdraw_ValidAmount_ChangesBalance_WithStub_UsingOut() // using stub and out parameter
+        {
+            // arrange
+            double currentBalance = 10.0;
+            double withdrawal = 1.0;
+            double expected = 9.0;
+
+            StubIBankDb fakeBankDb = new BankDb.Fakes.StubIBankDb();
+            fakeBankDb.WithdrawWithOutInt32DoubleDoubleOut = (int id, double amount, out double balance) =>
+                {
+                    balance = 9.0;
+                    return true;
+                };
+
+            var account = new CheckingAccount("JohnDoe", currentBalance, fakeBankDb);
+
+            // act
+            account.WithdrawFromDbUsingOut(withdrawal);
+            double actual = account.Balance;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void Withdraw_ValidAmount_ChangesBalance()
         {
             // arrange

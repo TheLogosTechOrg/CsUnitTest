@@ -13,8 +13,14 @@
         <member name="M:BankDb.Fakes.StubIBankDb.bd::BankDb#IBankDb#Withdraw(System.Int32,System.Double)">
             <summary>Sets the stub of IBankDb.Withdraw(Int32 id, Double amount)</summary>
         </member>
+        <member name="M:BankDb.Fakes.StubIBankDb.bd::BankDb#IBankDb#WithdrawWithOut(System.Int32,System.Double,System.Double@)">
+            <summary>Sets the stub of IBankDb.WithdrawWithOut(Int32 id, Double amount, Double&amp; balance)</summary>
+        </member>
         <member name="F:BankDb.Fakes.StubIBankDb.WithdrawInt32Double">
             <summary>Sets the stub of IBankDb.Withdraw(Int32 id, Double amount)</summary>
+        </member>
+        <member name="F:BankDb.Fakes.StubIBankDb.WithdrawWithOutInt32DoubleDoubleOut">
+            <summary>Sets the stub of IBankDb.WithdrawWithOut(Int32 id, Double amount, Double&amp; balance)</summary>
         </member>
     </members>
 </doc>
