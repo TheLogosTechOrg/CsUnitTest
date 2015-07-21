@@ -1,9 +1,11 @@
 ﻿using BankDb;
+using BankUtil;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Accounts
 {
@@ -58,6 +60,30 @@ namespace Accounts
         public DateTime GetTime()
         {
             return System.DateTime.Now;
+        }
+
+        public bool IsLeapYear()
+        {
+            return System.DateTime.IsLeapYear(2015);
+        }
+
+        public bool ForceNew()
+        {
+            Util u = new Util();
+            bool result = false;
+            bool forceNew = false;
+            string file = "test";
+            result = u.ToNewOrToUpdate(file, out forceNew);
+            return result;
+        }
+
+        public static void Main()
+        {
+            var account = new CheckingAccount("name", 10);
+            if(account.ForceNew())
+                MessageBox.Show("Yes or No is clicked");
+            else
+                MessageBox.Show("Cancel is clicked");
         }
     }
 }

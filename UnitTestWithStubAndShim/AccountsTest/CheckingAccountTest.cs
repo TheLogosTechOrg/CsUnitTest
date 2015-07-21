@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Accounts;
 using BankDb.Fakes;
 using Microsoft.QualityTools.Testing.Fakes;
+using BankUtil;
 
 namespace AccountsTest
 {
@@ -10,6 +11,7 @@ namespace AccountsTest
     public class CheckingAccountTest
     {
         [TestMethod]
+        // Shim a static property getter
         public void GetTime_WithShim()
         {
             double currentBalance = 10.0;
@@ -19,6 +21,42 @@ namespace AccountsTest
                 System.Fakes.ShimDateTime.NowGet = () => { return new DateTime(2000, 1, 1); };
                 CheckingAccount account = new CheckingAccount("JohnDoe", currentBalance);
                 DateTime result = account.GetTime();
+                Assert.AreEqual(expected, result);
+            }
+        }
+
+        [TestMethod]
+        // Shim a static method with parameter
+        public void IsLeapYear_WithShim()
+        {
+            double currentBalance = 10.0;
+            bool expected = false;
+            using (ShimsContext.Create())
+            {
+                System.Fakes.ShimDateTime.IsLeapYearInt32 = (int year) => { return false; };
+                CheckingAccount account = new CheckingAccount("JohnDoe", currentBalance);
+                bool result = account.IsLeapYear();
+                Assert.AreEqual(expected, result);
+            }
+        }
+        
+        [TestMethod]
+        // Shim an instance method with out parameter
+        // NOTE An instance of the shimmed class need to be passed in as the first argument
+        public void ForceNew_WithShim()
+        {
+            double currentBalance = 10.0;
+            bool expected = true;
+            using (ShimsContext.Create())
+            {
+                BankUtil.Fakes.ShimUtil.AllInstances.ToNewOrToUpdateStringBooleanOut = 
+                    (Util util, string file, out bool forceNew) => 
+                    {   // simulate the Yes button being clicked
+                        forceNew = true; 
+                        return true; 
+                    };
+                CheckingAccount account = new CheckingAccount("JohnDoe", currentBalance);
+                bool result = account.ForceNew();
                 Assert.AreEqual(expected, result);
             }
         }
