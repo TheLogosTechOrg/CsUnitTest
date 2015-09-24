@@ -67,6 +67,13 @@ namespace Accounts
             return System.DateTime.IsLeapYear(2015);
         }
 
+        public bool ShowMessage()
+        {
+            Util u = new Util();
+            u.ShowMessage();
+            return true;
+        }
+
         public bool ForceNew()
         {
             Util u = new Util();

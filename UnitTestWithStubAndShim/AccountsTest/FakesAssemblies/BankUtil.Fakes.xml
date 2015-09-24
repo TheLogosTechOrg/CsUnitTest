@@ -13,6 +13,15 @@
         <member name="M:BankUtil.Fakes.ShimUtil.#ctor(BankUtil.Util)">
             <summary>Initializes a new shim for the given instance</summary>
         </member>
+        <member name="T:BankUtil.Fakes.ShimUtil.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:BankUtil.Fakes.ShimUtil.AllInstances.ShowMessage">
+            <summary>Sets the shim of Util.ShowMessage()</summary>
+        </member>
+        <member name="P:BankUtil.Fakes.ShimUtil.AllInstances.ToNewOrToUpdateStringBooleanOut">
+            <summary>Sets the shim of Util.ToNewOrToUpdate(String file, Boolean&amp; forceNew)</summary>
+        </member>
         <member name="M:BankUtil.Fakes.ShimUtil.BehaveAsCurrent">
             <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
         </member>
@@ -25,13 +34,10 @@
         <member name="P:BankUtil.Fakes.ShimUtil.Constructor">
             <summary>Sets the shim of Util.Util()</summary>
         </member>
+        <member name="P:BankUtil.Fakes.ShimUtil.ShowMessage">
+            <summary>Sets the shim of Util.ShowMessage()</summary>
+        </member>
         <member name="P:BankUtil.Fakes.ShimUtil.ToNewOrToUpdateStringBooleanOut">
-            <summary>Sets the shim of Util.ToNewOrToUpdate(String file, Boolean&amp; forceNew)</summary>
-        </member>
-        <member name="T:BankUtil.Fakes.ShimUtil.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:BankUtil.Fakes.ShimUtil.AllInstances.ToNewOrToUpdateStringBooleanOut">
             <summary>Sets the shim of Util.ToNewOrToUpdate(String file, Boolean&amp; forceNew)</summary>
         </member>
         <member name="T:BankUtil.Fakes.StubUtil">
@@ -40,11 +46,11 @@
         <member name="M:BankUtil.Fakes.StubUtil.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:BankUtil.Fakes.StubUtil.InitializeStub">
-            <summary>Initializes a new instance of type StubUtil</summary>
-        </member>
         <member name="P:BankUtil.Fakes.StubUtil.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:BankUtil.Fakes.StubUtil.InitializeStub">
+            <summary>Initializes a new instance of type StubUtil</summary>
         </member>
         <member name="P:BankUtil.Fakes.StubUtil.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>

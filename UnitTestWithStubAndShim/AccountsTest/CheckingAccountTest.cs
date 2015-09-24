@@ -39,9 +39,29 @@ namespace AccountsTest
                 Assert.AreEqual(expected, result);
             }
         }
-        
+
         [TestMethod]
-        // Shim an instance method with out parameter
+        // Shim an instance method with no parameter
+        // NOTE An instance of the shimmed class need to be passed in as the argument
+        public void ShowMessage_WithShim()
+        {
+            double currentBalance = 10.0;
+            bool expected = true;
+            using (ShimsContext.Create())
+            {
+                BankUtil.Fakes.ShimUtil.AllInstances.ShowMessage =
+                    (Util util) =>
+                    {   // suppress the message box that needs to be closed by the user
+                        return;
+                    };
+                CheckingAccount account = new CheckingAccount("JohnDoe", currentBalance);
+                bool result = account.ShowMessage();
+                Assert.AreEqual(expected, result);
+            }
+        }
+
+        [TestMethod]
+        // Shim an instance method with normal and out parameters
         // NOTE An instance of the shimmed class need to be passed in as the first argument
         public void ForceNew_WithShim()
         {
